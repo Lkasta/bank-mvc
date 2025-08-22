@@ -10,7 +10,7 @@ def test_list_individuals():
   response = repo.list_individuals()
   print(response)
 
-
+@pytest.mark.skip(reason="db interaction")
 def test_withdraw():
   repo = IndividualRepository(db_connection_handler)
   
