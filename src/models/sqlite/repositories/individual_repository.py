@@ -12,3 +12,28 @@ class IndividualRepository:
         return individuals
       except NoResultFound:
         return []
+
+  def withdraw(self, individual_id: int, value: float) -> bool:
+    with self.__db_connection as database:
+      try:
+        individual = (
+          database.session
+          .query(IndividualTable)
+          .filter(IndividualTable.id == individual_id)
+          .first()
+        )
+        
+        if not individual:
+          return False
+        
+        if individual.balance < value:
+          return False
+        
+        individual.balance -= value
+        
+        database.session.commit()
+        return True
+        
+      except Exception as exception:
+        database.session.rollback()
+        raise exception
