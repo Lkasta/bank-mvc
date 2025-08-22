@@ -5,23 +5,23 @@ class CompanyTable(Base):
   __tablename__ = 'company'
 
   id = Column(BIGINT, primary_key=True)
-  monthly_income = Column(REAL, primary_key=False)
+  revenue = Column(REAL, primary_key=False)
   age = Column(BIGINT, primary_key=False)
-  full_name = Column(String, primary_key=False)
+  trade_name = Column(String, primary_key=False)
   phone = Column(String, primary_key=False)
-  email = Column(String, primary_key=False)
+  corporate_email = Column(String, primary_key=False)
   category = Column(String, primary_key=False)
   balance = Column(REAL, primary_key=False)
 
   def __repr__(self):
     return (
-      f"Indivisuals ["
-      f"full_name={self.full_name}, "
+      f"Company ["
+      f"trade_name={self.trade_name}, "
       f"age={self.age}, "
       f"phone={self.phone}, "
-      f"email={self.email}, "
+      f"corporate_email={self.corporate_email}, "
       f"category={self.category}, "
-      f"monthly_income={self.monthly_income}, "
+      f"revenue={self.revenue}, "
       f"balance={self.balance}"
       f"]"
     )
