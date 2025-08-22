@@ -8,6 +8,7 @@ disable=
       C0209,  # consider-using-f-string → Sugere usar f-strings em vez de % ou format()
       E0015,  # misplaced-bare-raise → Uso de `raise` fora de um except (sem contexto)
       W0719,
+      R0903,
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
 # 3 compatible code, which means that the block might have code that exists
