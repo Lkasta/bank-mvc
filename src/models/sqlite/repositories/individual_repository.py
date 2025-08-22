@@ -1,7 +1,8 @@
 from sqlalchemy.orm.exc import NoResultFound
 from src.models.sqlite.entities.individual import IndividualTable
+from src.models.sqlite.interfaces.individual_repository import IndividalRepositoryInterface
 
-class IndividualRepository:
+class IndividualRepository(IndividalRepositoryInterface):
   def __init__(self, db_connection) -> None:
     self.__db_connection = db_connection
 
